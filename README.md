@@ -254,20 +254,20 @@ Darbo procesas:
 1. Sukurti du NDVI reikšmes turintys rastrai.
 2. Sukurtas taškų tinklelis pagal rastrų geografinę aprėptį (taškų tinklelis reikalingas tyrimo supaprastinimui, nes rastrų pikseliai turi skirtingas rezoliucijas).
 3. Taškų tinklelio taškams priskirtos po jais esančių rastro pikselių reikšmės.
-4. Taškų tinkeliai su duomenimis išsaugoti .csv formatu.
-5. Duomenys pavaizduoti grafikuose.
+4. Taškų tinkleliai su duomenimis išsaugoti .geojson ir .csv formatu.
+5. Duomenys pavaizduoti grafike.
 
 ### Qgis rezultatas
 
 - Apytikslės rastro reikšmės - min: 0.1, max: 0.3.
 
-<img src="./ndvi_compare/tif/qgis_rendered_img.png" width="50%" height="50%">
+<img src="./ndvi_compare/tif/qgis_rendered_img.png" width="25%" height="25%">
 
 ### GEE rezultatas
 
 - Apytikslės rastro reikšmės - min: 0.1 , max: 0.4.
 
-<img src="./ndvi_compare/tif/ee_rendered_img.png" width="50%" height="50%">
+<img src="./ndvi_compare/tif/ee_rendered_img.png" width="25%" height="25%">
 
 ### Grafikas
 
