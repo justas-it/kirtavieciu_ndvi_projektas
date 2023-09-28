@@ -9,6 +9,17 @@
 
 ---
 
+## Trumpas darbo proceso aprašymas
+
+Darbo procesas:
+
+1. Atrinkti kirtaviečių plotai.
+2. Iš atrintų kirtaviečių plotų atsitiktinai pasirinkti penki plotai.
+3. Pasirinktuose plotuose apskaičiuotos vidutinės mėnesio NDVI (ir kitos) reikšmės laikotarpiu 2017-06-01, 2022-08-01.
+4. Apskaičiuotos reikšmės pavaziduotos grafikuose.
+
+---
+
 ## Duomenų šaltiniai
 
 - Kirtaviečių duomenys atrinkti pasitelkiant Valstybinės miškų tarnybos viešai pasiekiamas paslaugas, prieinamas per M-GIS. Miško kirtaviečių plotai atrinkti pagal 2019-2020 m. Sentinel palydovo identifikuotus plynus miško kirtimo plotus, kurie taip pat pasiekiami per M-GIS. [M-GIS nuoroda.](https://kadastras.amvmt.lt/portal/apps/webappviewer/index.html?id=42967a7ae33848a6ad8a577a70307607)
@@ -28,7 +39,7 @@
 
 ## Atrinktų kirtaviečių duomenys
 
-Duomenys gali būti pasiekiami [aplanke geojson.](https://github.com/justas-it/lt_misku_ndvi_projektas/tree/main/geojson)
+Duomenys gali būti pasiekiami [aplanke geojson.](./geojson)
 
 **Svarbu! Atliekant skaičiavimus duomenis patogu įsikelti per GEE Code Console kaip shapefile (.shp).**
 
@@ -49,7 +60,7 @@ Papildomi duomenys (selected_objects_areas_wgs84.geojson, selected_areas_alldata
 
 ## Skaičiavimų duomenys
 
-Skaičiavimų duomenys gali būti pasiekiami [aplanke csv.](https://github.com/justas-it/lt_misku_ndvi_projektas/tree/main/csv)
+Skaičiavimų duomenys gali būti pasiekiami [aplanke csv.](./csv)
 
 Bendras NDVI reikšmių paaiškinimas min: -1, max: 1, -1 žymi vandens buvimą, 0 žymi vegetacijos nebuvimą, 1 žymi vegetacijos buvimą.
 
@@ -73,7 +84,7 @@ Papildoma informacija:
 
 ## Python kodas
 
-Python kodas naudotas duomenų skaičiavimams atlikti gali būti pasiekiamas [aplanke code.](https://github.com/justas-it/lt_misku_ndvi_projektas/tree/main/code)
+Python kodas naudotas duomenų skaičiavimams atlikti gali būti pasiekiamas [aplanke code.](./code)
 
 **Svarbu! Pateiktas python kodas gali turėti klaidų ir veikti netinkamai.**
 
@@ -229,5 +240,39 @@ Darbo rezultatai rodo, kad identifikuoti kirtavietę tik iš NDVI skaitinių rei
 
 ## Papildomas tyrimas
 
-Čia bus pateikiamas papildomo tyrimo rezultatai, kur bus palygintos NDVI reiškmės iš skirtingų šaltinių.
+Duomenys susiję su papildomu tyrimu gali būti pasiekiami [aplanke ndvi_compare.](./ndvi_compare)
 
+Buvo pamėginta palyginti NDVI reikšmes iš dviejų skirtingų šaltinių siekiant bent apytiksliai įsitikinti, kad GEE NDVI reikšmės atitinka realias NDVI reikšmes.
+
+NDVI šaltiniai:
+
+- Apskaičiuota pasitelkiant Sentinel-2 vaizdą atsisiųstą iš [Open Access Hub](https://scihub.copernicus.eu/) ir Qgis.
+- Apskaičiuota pasitelkiant GEE Python API.
+
+Darbo procesas:
+
+- Sukurti du NDVI reikšmes turintys rastrai.
+- Sukurtas taškų tinklelis pagal rastrų geografinę aprėptį (taškų tinklelis reikalingas tyrimo supaprastinimui, nes rastrų pikseliai turi skirtingas rezoliucijas).
+- Taškų tinklelio taškams priskirtos po jais esančių rastro pikselių reikšmės.
+- Taškų tinkeliai su duomenimis išsaugoti .csv formatu.
+- Duomenys pavaizduoti grafikuose.
+
+### Qgis rezultatas
+
+- Apytikslės rastro reikšmės - min: 0.1, max: 0.3
+
+![qgis_img](./ndvi_compare/tif/qgis_rendered_img.tif)
+
+### GEE rezultatas
+
+- Apytikslės rastro reikšmės - min: 0.1 , max: 0.4
+
+![ee_img](./ndvi_compare/tif/ee_rendered_img.tif)
+
+### Grafikas
+
+![ee_qgis_plot](./ndvi_compare/plots/ee_qgis_plot.png)
+
+### Papildomo tyrimo rezultatų aptarimas
+
+Papildomas tyrimas nėra visiškai tikslus, bet parodo, kad GEE NDVI reikšmės (tikėtina) turi truputį didesnį teigiamą poslinkį nei Qgis NDVI reikšmės. Taip galimai yra dėl to, kad iš GEE buvo eksportuotas rastras turintis mažesnę erdvinę raišką nei Qgis rastras. Taip pat galimi skirtumai dėl programų skaičiavimo metodų - GEE kode skaičiuojant nebuvo nurodyta erdvinė rezoliucija (buvo nurodyta tik eksportuojant rastrą) dėl to nėra visiškai aišku kokią erdvinę rezoliuciją GEE naudojo skaičiavimams (tikėtina 10 m). Konkretesniems rezultatams gauti reikėtų tolesnių detalių tyrimų.
