@@ -1,6 +1,6 @@
 # Lietuvos miškų kirtaviečių NDVI vertinimo projektas
 
-- Projektas vykdomas mokymosi tikslams, kaip profesinės praktikos užduotis.
+- Projektas vykdomas mokymosi tikslais, kaip profesinės praktikos užduotis.
 - Projektas nėra oficialus ir nėra susijęs su šiame aprašyme minimomis organizacijomis.
 - Projekto pagrindinis tikslas yra ištirti kaip NDVI reikšmės atspindi miško kirtavietės pokyčius per pasirinktą laiko tarpą.
 - Projektas nuo 2023-10-01 bus aktyviai nebetęsiamas, bet gali būti kartais papildomas.
@@ -14,26 +14,26 @@
 Darbo procesas:
 
 1. Atrinkti kirtaviečių plotai.
-2. Iš atrintų kirtaviečių plotų atsitiktinai pasirinkti penki plotai.
-3. Pasirinktuose plotuose apskaičiuotos vidutinės mėnesio NDVI (ir kitos) reikšmės laikotarpiu 2017-06-01, 2022-08-01.
-4. Apskaičiuotos reikšmės pavaziduotos grafikuose.
+2. Iš atrinktų kirtaviečių plotų atsitiktinai pasirinkti penki plotai.
+3. Pasirinktuose plotuose apskaičiuotos vidutinės mėnesio NDVI (ir kitos) reikšmės laikotarpiu 2017-06-01 - 2022-08-01.
+4. Apskaičiuotos reikšmės pavaizduotos grafikuose.
 
 ---
 
 ## Duomenų šaltiniai
 
-- Kirtaviečių duomenys atrinkti pasitelkiant Valstybinės miškų tarnybos viešai pasiekiamas paslaugas, prieinamas per M-GIS. Miško kirtaviečių plotai atrinkti pagal 2019-2020 m. Sentinel palydovo identifikuotus plynus miško kirtimo plotus, kurie taip pat pasiekiami per M-GIS. [M-GIS nuoroda.](https://kadastras.amvmt.lt/portal/apps/webappviewer/index.html?id=42967a7ae33848a6ad8a577a70307607)
+- Kirtaviečių duomenys atrinkti pasitelkiant Valstybinės miškų tarnybos viešai pasiekiamas paslaugas, prieinamas per M-GIS. Miško kirtaviečių plotai atrinkti pagal 2019 - 2020 m. Sentinel palydovo identifikuotus plynus miško kirtimo plotus, kurie taip pat pasiekiami per M-GIS. [M-GIS nuoroda.](https://kadastras.amvmt.lt/portal/apps/webappviewer/index.html?id=42967a7ae33848a6ad8a577a70307607)
 - Pagrindiniai palydoviniai duomenys naudoti NDVI ir kitiems skaičiavimams atlikti yra Sentinel-2 MSI: MultiSpectral Instrument, Level-2A duomenys. [Earth Engine Data Catalog nuoroda.](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR#description)
-- Papildomi palydoviniai duomenys naudoti skaičiavimų tikslumui palyginti yra MODIS Terra Daily NDVI. [Earth Engine Data Catalog nuoroda.](https://developers.google.com/earth-engine/datasets/catalog/MODIS_MOD09GA_006_NDVI#description)
+- Kiti palydoviniai duomenys naudoti skaičiavimų tikslumui palyginti yra MODIS Terra Daily NDVI. [Earth Engine Data Catalog nuoroda.](https://developers.google.com/earth-engine/datasets/catalog/MODIS_MOD09GA_006_NDVI#description)
 
 ---
 
 ## Naudota programinė įranga
 
-- Qgis
-- Python 3
-- Google Earth Engine Python API
-- Jupyter Notebook
+- Qgis.
+- Python 3.
+- Google Earth Engine (GEE) Python API.
+- Jupyter Notebook.
 
 ---
 
@@ -47,14 +47,14 @@ Atributinės lentelės stulpelių reikšmės:
 
 - fid - automatiškai sugeneruotas objekto numeris.
 - km - kirtavietės aptikimo metai.
-- amz - vidutinis medžių amžius teritotrijoje (m.).
+- amz - vidutinis medžių amžius teritorijoje (m.).
 - h - vidutinis medžių aukštis teritorijoje (m).
 - geokodas - sklypo kuriame yra kirtavietė geokodas.
 - vmr - vyraujanti medžių rūšis, be lietuviškų raidžių (pvz. a yra ąžuolas).
 - area - teritorijos plotas ($m^2$).
 - perimeter - teritorijos perimetras (m).
 
-Papildomi duomenys (selected_objects_areas_wgs84.geojson, selected_areas_alldata_areas_wgs84.geojson) su atrinktomis teritorijomis ir pridėtomis skaičiavimų reikšmėmis gali būti pasiekiami [aplanke geojson.](https://github.com/justas-it/lt_misku_ndvi_projektas/tree/main/geojson) Pagrindinės duomenų reikšmės išlieka tokios pačios kaip nurodyta šiame skyriuje, o papildomos reikšmės identiškos [skaičiavimo duomenų reikšmėms.](https://github.com/justas-it/lt_misku_ndvi_projektas#skai%C4%8Diavim%C5%B3-duomenys)
+Papildomi duomenys (selected_objects_areas_wgs84.geojson, selected_areas_alldata_areas_wgs84.geojson) su atrinktomis teritorijomis ir pridėtomis skaičiavimų reikšmėmis gali būti pasiekiami [aplanke geojson.](./geojson) Pagrindinės duomenų stulpelių reikšmės išlieka tokios pačios kaip nurodyta šiame skyriuje, o papildomų stulpelių reikšmės identiškos [skaičiavimo duomenų reikšmėms.](https://github.com/justas-it/kirtavieciu_ndvi_projektas#skai%C4%8Diavim%C5%B3-duomenys)
 
 ---
 
@@ -77,8 +77,8 @@ Atributinės lentelės stulpelių reikšmės:
 
 Papildoma informacija:
 
-- t-no_buffer...csv - teritorija be bufferinės teritorijos
-- t-buffer...csv - tik teritorijos buferinė teritorija (150 m spinduliu apie teritorija)
+- t-no_buffer...csv - teritorija be buferinės teritorijos.
+- t-buffer...csv - tik teritorijos buferinė teritorija (150 m spinduliu apie teritorija).
 
 ---
 
@@ -96,13 +96,13 @@ Supaprastinta kodo veikimo seka yra tokia:
 2. Sukuriamas datų sąrašas pagal nurodyta laiko intervalą.
 3. Iš datų sąrašo paimamos datų poros apimančios mėnesio laikotarpį.
 4. Mėnesio laikotarpiui apskaičiuojamas palydovinių duomenų reikšmių vidurkis nurodytoje teritorijoje.
-5. Apskaičiuojamas nurodytos teritorijos (visų teritorijos NDVI pikselių) reikšmių vidurkis.
+5. Apskaičiuojamas nurodytos teritorijos pasirinkto mėnesio (visų teritorijos NDVI pikselių) reikšmių vidurkis.
 6. Pasibaigus nurodytam laiko intervalui visi suskaičiuoti duomenys įrašomi į bilioteką.
 7. Duomenys iš biliotekos išsaugomi .csv formatu, pavaizduojami grafike ir išsaugomi .png formatu, statistiškai dekomponuojami, pavaizduojami grafike ir išsaugomi .png formatu, nurodytos teritorijos ribos išsaugomos žemėlapyje .html formatu.
 
 Papildoma informacija:
 
-- Naudotos bibliotekos ir moduliai - ee, geemap, matplotlib, datetime, dateutil, pandas, numpy, statsmodels
+- Naudotos bibliotekos ir moduliai - ee, geemap, matplotlib, datetime, dateutil, pandas, numpy, statsmodels.
 - Skirtumai tarp kodo failų - abu .ipynb failai yra beveik identiški, skiriasi tik kodo pradžia kur failo ee_ndvi_github_buffer.ipynb atveju kintamasis aoi yra ne kirtavietė, o buferis.
 
 ---
@@ -111,7 +111,7 @@ Papildoma informacija:
 
 Ašių reikšmės:
 
-- x - žymi laiko pokytį, pažymėta datomis su mėnesiais arba mėnesio skaičiumi intervale (2017-06-01, 2022-08-01).
+- x - žymi laiko pokytį, pažymėta datomis su mėnesiais arba mėnesio skaičiumi intervale (2017-06-01 - 2022-08-01).
 - y - žymi NDVI reikšmes arba Sentinel-2 SCL reikšmes.
 
 Statistinės dekompozicijos reikšmės:
@@ -127,8 +127,8 @@ Statistinės dekompozicijos reikšmės:
 
 ### Tyrimo objektas nr. 1
 
-- fid = 111, kirtavietės aptikimo metai = 2020, sklypo geokodas = 14060349016
-- Teritorijos plotas - 28160 $m^2$
+- fid = 111, kirtavietės aptikimo metai = 2020, sklypo geokodas = 14060349016.
+- Teritorijos plotas - 28160 $m^2$.
 
 Teritorija:
   
@@ -148,8 +148,8 @@ Buferis:
 
 ### Tyrimo objektas nr. 2
 
-- fid = 203, kirtavietės aptikimo metai = 2019, sklypo geokodas = 60070094010
-- Teritorijos plotas - 29319 $m^2$
+- fid = 203, kirtavietės aptikimo metai = 2019, sklypo geokodas = 60070094010.
+- Teritorijos plotas - 29319 $m^2$.
 
 Teritorija:
 
@@ -169,8 +169,8 @@ Buferis:
 
 ### Tyrimo objektas nr. 3
 
-- fid = 35, kirtavietės aptikimo metai = 2019, sklypo geokodas = 19010163004
-- Teritorijos plotas - 25193 $m^2$
+- fid = 35, kirtavietės aptikimo metai = 2019, sklypo geokodas = 19010163004.
+- Teritorijos plotas - 25193 $m^2$.
 
 Teritorija:
 
@@ -190,8 +190,8 @@ Buferis:
 
 ### Tyrimo objektas nr. 4
 
-- fid = 15, kirtavietės aptikimo metai = 2019, sklypo geokodas = 22050085001
-- Teritorijos plotas - 23226 $m^2$
+- fid = 15, kirtavietės aptikimo metai = 2019, sklypo geokodas = 22050085001.
+- Teritorijos plotas - 23226 $m^2$.
 
 Teritorija:
 
@@ -211,8 +211,8 @@ Buferis:
 
 ### Tyrimo objektas nr. 5
 
-- fid = 192, kirtavietės aptikimo metai = 2019, sklypo geokodas = 59070487009
-- Teritorijos plotas - 41078 $m^2$
+- fid = 192, kirtavietės aptikimo metai = 2019, sklypo geokodas = 59070487009.
+- Teritorijos plotas - 41078 $m^2$.
 
 Teritorija:
 
@@ -251,23 +251,23 @@ NDVI šaltiniai:
 
 Darbo procesas:
 
-- Sukurti du NDVI reikšmes turintys rastrai.
-- Sukurtas taškų tinklelis pagal rastrų geografinę aprėptį (taškų tinklelis reikalingas tyrimo supaprastinimui, nes rastrų pikseliai turi skirtingas rezoliucijas).
-- Taškų tinklelio taškams priskirtos po jais esančių rastro pikselių reikšmės.
-- Taškų tinkeliai su duomenimis išsaugoti .csv formatu.
-- Duomenys pavaizduoti grafikuose.
+1. Sukurti du NDVI reikšmes turintys rastrai.
+2. Sukurtas taškų tinklelis pagal rastrų geografinę aprėptį (taškų tinklelis reikalingas tyrimo supaprastinimui, nes rastrų pikseliai turi skirtingas rezoliucijas).
+3. Taškų tinklelio taškams priskirtos po jais esančių rastro pikselių reikšmės.
+4. Taškų tinkeliai su duomenimis išsaugoti .csv formatu.
+5. Duomenys pavaizduoti grafikuose.
 
 ### Qgis rezultatas
 
-- Apytikslės rastro reikšmės - min: 0.1, max: 0.3
+- Apytikslės rastro reikšmės - min: 0.1, max: 0.3.
 
-![qgis_img](./ndvi_compare/tif/qgis_rendered_img.tif)
+![qgis_img](./ndvi_compare/tif/qgis_rendered_img.png)
 
 ### GEE rezultatas
 
-- Apytikslės rastro reikšmės - min: 0.1 , max: 0.4
+- Apytikslės rastro reikšmės - min: 0.1 , max: 0.4.
 
-![ee_img](./ndvi_compare/tif/ee_rendered_img.tif)
+![ee_img](./ndvi_compare/tif/ee_rendered_img.png)
 
 ### Grafikas
 
