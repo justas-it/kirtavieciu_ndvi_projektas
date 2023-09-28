@@ -62,7 +62,7 @@ Papildomi duomenys (selected_objects_areas_wgs84.geojson, selected_areas_alldata
 
 Skaičiavimų duomenys gali būti pasiekiami [aplanke csv.](./csv)
 
-Bendras NDVI reikšmių paaiškinimas min: -1, max: 1, -1 žymi vandens buvimą, 0 žymi vegetacijos nebuvimą, 1 žymi vegetacijos buvimą.
+Bendras NDVI reikšmių paaiškinimas - min: -1, max: 1, -1 žymi vandens buvimą, 0 žymi vegetacijos nebuvimą, 1 žymi vegetacijos buvimą.
 
 Atributinės lentelės stulpelių reikšmės:
 
@@ -111,7 +111,7 @@ Papildoma informacija:
 
 Ašių reikšmės:
 
-- x - žymi laiko pokytį, pažymėta datomis su mėnesiais arba mėnesio skaičiumi intervale (2017-06-01 - 2022-08-01).
+- x - žymi laiko pokytį, pažymėta datomis su mėnesiais arba mėnesio skaičiumi intervale 2017-06-01 - 2022-08-01.
 - y - žymi NDVI reikšmes arba Sentinel-2 SCL reikšmes.
 
 Statistinės dekompozicijos reikšmės:
@@ -275,4 +275,4 @@ Darbo procesas:
 
 ### Papildomo tyrimo rezultatų aptarimas
 
-Papildomas tyrimas nėra visiškai tikslus, bet parodo, kad GEE NDVI reikšmės (tikėtina) turi truputį didesnį teigiamą poslinkį nei Qgis NDVI reikšmės. Taip galimai yra dėl to, kad iš GEE buvo eksportuotas rastras turintis mažesnę erdvinę raišką nei Qgis rastras. Taip pat galimi skirtumai dėl programų skaičiavimo metodų - GEE kode skaičiuojant nebuvo nurodyta erdvinė rezoliucija (buvo nurodyta tik eksportuojant rastrą) dėl to nėra visiškai aišku kokią erdvinę rezoliuciją GEE naudojo skaičiavimams (tikėtina 10 m). Konkretesniems rezultatams gauti reikėtų tolesnių detalių tyrimų.
+Papildomas tyrimas nėra visiškai tikslus, bet parodo, kad GEE NDVI reikšmės (tikėtina) turi truputį didesnį teigiamą poslinkį nei Qgis NDVI reikšmės. Taip galimai yra dėl to, kad iš GEE buvo eksportuotas rastras turintis mažesnę erdvinę raišką nei Qgis rastras. Taip pat galimi skirtumai dėl programų skaičiavimo metodų - GEE kode skaičiuojant nebuvo nurodyta erdvinė rezoliucija (buvo nurodyta tik eksportuojant rastrą ir ee.Reducer.mean() taikymo metu) dėl to nėra visiškai aišku kokią erdvinę rezoliuciją GEE naudoja skaičiavimams iki teritorijos vidurkio skaičiavimo (tikėtina 10 m). Konkretesniems rezultatams gauti reikėtų tolesnių detalių tyrimų.
