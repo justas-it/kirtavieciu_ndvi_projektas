@@ -261,13 +261,13 @@ Darbo procesas:
 
 - Apytikslės rastro reikšmės - min: 0.1, max: 0.3.
 
-![qgis_img](./ndvi_compare/tif/qgis_rendered_img.png)
+<img src="./ndvi_compare/tif/qgis_rendered_img.png" width="50%" height="50%">
 
 ### GEE rezultatas
 
 - Apytikslės rastro reikšmės - min: 0.1 , max: 0.4.
 
-![ee_img](./ndvi_compare/tif/ee_rendered_img.png)
+<img src="./ndvi_compare/tif/ee_rendered_img.png" width="50%" height="50%">
 
 ### Grafikas
 
