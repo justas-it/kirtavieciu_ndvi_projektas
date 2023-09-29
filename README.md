@@ -97,8 +97,8 @@ Supaprastinta kodo veikimo seka yra tokia:
 3. Iš datų sąrašo paimamos datų poros apimančios mėnesio laikotarpį.
 4. Mėnesio laikotarpiui apskaičiuojamas palydovinių duomenų reikšmių vidurkis nurodytoje teritorijoje.
 5. Apskaičiuojamas nurodytos teritorijos pasirinkto mėnesio (visų teritorijos NDVI pikselių) reikšmių vidurkis.
-6. Pasibaigus nurodytam laiko intervalui visi suskaičiuoti duomenys įrašomi į bilioteką.
-7. Duomenys iš biliotekos išsaugomi .csv formatu, pavaizduojami grafike ir išsaugomi .png formatu, statistiškai dekomponuojami, pavaizduojami grafike ir išsaugomi .png formatu, nurodytos teritorijos ribos išsaugomos žemėlapyje .html formatu.
+6. Pasibaigus nurodytam laiko intervalui visi suskaičiuoti duomenys (teritorijos mėnesio vidurkiai) įrašomi į bilioteką.
+7. Duomenys iš bibliotekos išsaugomi .csv formatu, pavaizduojami grafike ir išsaugomi .png formatu, statistiškai dekomponuojami, pavaizduojami grafike ir išsaugomi .png formatu, nurodytos teritorijos ribos išsaugomos žemėlapyje .html formatu.
 
 Papildoma informacija:
 
